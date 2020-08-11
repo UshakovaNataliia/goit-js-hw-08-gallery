@@ -1,9 +1,9 @@
 export default [
     {
       preview:
-        'https://cdn.pixabay.com/photo/2019/05/14/16/43/hokkaido-4202825__340.jpg',
+        'https://cdn.pixabay.com/photo/2020/07/28/04/27/flowers-5443922__340.jpg',
       original:
-        'https://cdn.pixabay.com/photo/2019/05/14/16/43/hokkaido-4202825_1280.jpg',
+        'https://cdn.pixabay.com/photo/2020/07/28/04/27/flowers-5443922_1280.jpg',
       description: 'Hokkaido Flower',
     },
     {
@@ -15,9 +15,9 @@ export default [
     },
     {
       preview:
-        'https://cdn.pixabay.com/photo/2019/05/16/09/47/view-4206785__340.jpg',
+        'https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__340.jpg',
       original:
-        'https://cdn.pixabay.com/photo/2019/05/16/09/47/view-4206785_1280.jpg',
+        'https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830_1280.jpg',
       description: 'Aerial Beach View',
     },
     {
