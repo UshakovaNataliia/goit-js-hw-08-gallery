@@ -1,3 +1,6 @@
+
+
+
 import gallery from './gallery-items.js';
 
 const refs ={
@@ -10,7 +13,7 @@ const refs ={
   gallerySrc: gallery.map((item) => item.original),
   
 };
-function createGallery (img) {
+function createGallery () {
   const images = gallery.map(img => `<li class="gallery__item">
   <a
     class="gallery__link"
@@ -72,7 +75,7 @@ function keyboardChange(event) {
       if (refs.gallerySrc[i] === refs.contentImg.src) {
         refs.contentImg.src = refs.gallerySrc[i - 1];
         break;
-      };
-    };
-  };
+      }
+    }
+  }
 }
