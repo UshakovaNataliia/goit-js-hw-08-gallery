@@ -35,7 +35,7 @@ createGallery();
 
 refs.gallery.addEventListener('click', openModal);
 refs.closeBtn.addEventListener('click', closeModal);
-refs.overlay.addEventListener('click', closeModal);
+refs.modal.addEventListener('click', closeModal);
 window.addEventListener('keydown', closeModalWithEsc);
 window.addEventListener('keydown', keyboardChange);
 
