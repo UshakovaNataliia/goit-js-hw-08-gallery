@@ -1,6 +1,3 @@
-
-
-
 import gallery from './gallery-items.js';
 
 const refs ={
@@ -11,9 +8,9 @@ const refs ={
   contentImg: document.querySelector('.lightbox__image'),
   closeBtn: document.querySelector('.lightbox__button'),
   gallerySrc: gallery.map((item) => item.original),
-  
 };
-function createGallery () {
+
+const createGallery = function() {
   const images = gallery.map(img => `<li class="gallery__item">
   <a
     class="gallery__link"
@@ -33,13 +30,7 @@ return cards;
 
 createGallery();
 
-refs.gallery.addEventListener('click', openModal);
-refs.closeBtn.addEventListener('click', closeModal);
-refs.modal.addEventListener('click', closeModal);
-window.addEventListener('keydown', closeModalWithEsc);
-window.addEventListener('keydown', keyboardChange);
-
-function openModal (event) {
+const openModal = function(event) {
   event.preventDefault();
 
   if (event.target.nodeName !== 'IMG') return;
@@ -48,21 +39,27 @@ function openModal (event) {
   refs.contentImg.src = event.target.dataset.source;
   refs.closeBtn.alt = event.target.alt; 
 
+  refs.modal.addEventListener('click', closeModal);
+  window.addEventListener('keydown', closeModalWithEsc);
+  window.addEventListener('keydown', keyboardChange);
 }
 
-function closeModal() {
+const closeModal = function() {
   refs.modal.classList.remove('is-open');
-  window.removeEventListener('keydown', openModal);
   refs.contentImg.src = '';
+
+  refs.modal.removeEventListener('click', closeModal);
+  window.removeEventListener('keydown', openModal);
+  window.removeEventListener('keydown', keyboardChange);
 }
 
-function closeModalWithEsc (event) {
+const closeModalWithEsc = function(event) {
   if (event.code === "Escape") {
     closeModal();   
   }
 }
 
-function keyboardChange(event) {
+const keyboardChange = function(event) {
   if (event.code === "ArrowRight") {
     for (let i = 0; i < refs.gallerySrc.length - 1; i += 1) {
       if (refs.gallerySrc[i] === refs.contentImg.src) {
@@ -79,3 +76,5 @@ function keyboardChange(event) {
     }
   }
 }
+
+refs.gallery.addEventListener('click', openModal);
